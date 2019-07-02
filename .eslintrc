@@ -1,0 +1,6 @@
+{
+  "extends": ["wesbos"],
+  "rules": {
+    "arrow-body-style": "off"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "gatsby-site-template",
+  "private": true,
+  "description": "Template website for Phiranno Designs",
+  "version": "1.0.0",
+  "author": "Luke Bennett <hello@lukebennett.com.au>",
+  "dependencies": {
+    "autoprefixer": "^9.6.0",
+    "gatsby": "^2.10.5",
+    "gatsby-image": "^2.2.3",
+    "gatsby-link": "^2.2.0",
+    "gatsby-plugin-canonical-urls": "^2.1.0",
+    "gatsby-plugin-facebook-pixel": "^1.0.3",
+    "gatsby-plugin-google-analytics": "^2.1.0",
+    "gatsby-plugin-manifest": "^2.2.0",
+    "gatsby-plugin-netlify": "^2.1.0",
+    "gatsby-plugin-postcss": "^2.1.0",
+    "gatsby-plugin-purgecss": "^4.0.0",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-robots-txt": "^1.4.0",
+    "gatsby-plugin-sharp": "^2.2.1",
+    "gatsby-plugin-sitemap": "^2.2.0",
+    "gatsby-source-filesystem": "^2.1.1",
+    "gatsby-transformer-sharp": "^2.2.0",
+    "postcss-import": "^12.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-lazyload": "^2.6.1",
+    "tailwindcss": "^1.0.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "build:serve": "gatsby build && gatsby serve",
+    "develop": "gatsby develop --open",
+    "lint:fix": "gatsby clean && eslint . --fix",
+    "serve": "gatsby serve --open",
+    "start": "npm run develop"
+  }
+}
