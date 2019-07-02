@@ -6,7 +6,7 @@ import Carousel from 'nuka-carousel';
 const HeroSectionCarousel = ({ data }) => (
   <div className="relative z-10">
     <Carousel
-      // autoplay
+      autoplay
       autoplayInterval={5000}
       cellAlign="center"
       dragging
