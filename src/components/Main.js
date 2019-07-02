@@ -37,7 +37,7 @@ const Hero = () => (
       <div className="bg-black relative text-white">
         <Carousel data={data} />
         <div className="absolute flex flex-col inset-0 w-full z-10">
-          <div className="black-gradient flex flex-wrap items-center justify-between px-12 py-4">
+          <div className="black-gradient flex flex-wrap items-center justify-between px-12 pb-24 pt-4">
             <img className="h-6" src={logoType} alt="4x4 Together logo." />
             <div className="flex-shrink-0">
               <SocialIcon
