@@ -1,6 +1,10 @@
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        display: 'Geometos',
+      },
+    },
   },
   variants: {},
   plugins: [],

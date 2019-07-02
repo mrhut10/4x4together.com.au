@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to gatsby-site-template 👋</h1>
+<h1 align="center">Welcome to 4x4 Together 👋</h1>
 <p>
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/luke_bennett_">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/21f7d687-3a8c-4f65-a4eb-8f90399a8990/deploy-status)](https://app.netlify.com/sites/gatsby-website-template/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0170494a-22a5-4869-a60d-8fd5541172b4/deploy-status)](https://app.netlify.com/sites/4x4together/deploys)
 
 > Gatsby Starter for Phiranno Designs
 

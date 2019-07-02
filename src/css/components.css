@@ -5,3 +5,12 @@
   margin-left: 50%;
   transform: translateX(-50%);
 }
+
+.black-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 0%, 0.5),
+    ease-in-out,
+    transparent
+  );
+}
