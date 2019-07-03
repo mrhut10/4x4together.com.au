@@ -6,17 +6,20 @@ import SEO from '../components/SEO';
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="404: Not Found" />
     <div className="flex flex-1 items-center justify-center mx-auto w-full">
-      <div className="max-w-sm p-4">
-        <h1 className="leading-none mb-2 pt-2 text-4xl">404: Page Not Found</h1>
-        <p>The page you were looking for doesn't seem to exist.</p>
-        <p className="mt-4">
+      <div className="border-2 border-black max-w-sm p-4 text-center">
+        <h1 className="font-display leading-none mb-4 pt-2 text-4xl text-black">
+          404: Page Not Found
+        </h1>
+        <p>There is nothing here.</p>
+        <p className="flex justify-center">
           <Link
-            className="bg-blue-700 hover:bg-blue-600 font-semibold inline-block leading-none px-4 py-2 text-white text-xs tracking-wide uppercase"
+            className="bg-black hover:bg-gray-900 font-display inline-block leading-none -mb-4 px-12 py-2 rounded-none text-white text-lg tracking-wide uppercase"
+            style={{ transform: `translateY(50%)` }}
             to="/"
           >
-            Back to homepage
+            Return to home
           </Link>
         </p>
       </div>
