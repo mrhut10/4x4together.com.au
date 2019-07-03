@@ -1,7 +1,26 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 import Image from 'gatsby-image';
 import Carousel from 'nuka-carousel';
+import propTypes from 'prop-types';
+
+const CenterRightControl = ({ currentSlide, goToSlide, slideCount }) => {
+  const dots = [];
+  for (let i = 0; i < slideCount; i += 1) {
+    dots.push(
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+      <li onClick={goToSlide(i)}>slide {i + 1}</li>
+    );
+  }
+  return <ul style={{ zIndex: -20 }}>{dots}</ul>;
+};
+
+CenterRightControl.propTypes = {
+  currentSlide: propTypes.number,
+  goToSlide: propTypes.func,
+  slideCount: propTypes.number,
+};
 
 const HeroSectionCarousel = ({ data }) => {
   return (
@@ -17,7 +36,7 @@ const HeroSectionCarousel = ({ data }) => {
         swiping
         wrapAround
         renderCenterLeftControls={null}
-        renderCenterRightControls={null}
+        renderCenterRightControls={CenterRightControl}
       >
         {data.hero.edges.map(edge => (
           <div
