@@ -1,5 +1,17 @@
 /* Component classes */
 
+/* purgecss start ignore */
+.ReactModal__Body--open > #___gatsby {
+  filter: blur(8px);
+  position: relative;
+  z-index: -1;
+}
+
+.ReactModal__Body--open > .ReactModalPortal {
+  z-index: 99 !important;
+}
+/* purgecss end ignore */
+
 .full-bleed {
   width: 100vw;
   margin-left: 50%;
