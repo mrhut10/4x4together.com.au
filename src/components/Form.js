@@ -83,7 +83,7 @@ export default class ContactForm extends React.Component {
           <label htmlFor="name">
             <span className="uppercase">Name:</span>
             <input
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 font-sans leading-tight px-3 py-2 rounded text-gray-700 w-full focus:outline-none focus:border-black"
               id="name"
               name="name"
               onChange={this.handleChange}
@@ -98,7 +98,7 @@ export default class ContactForm extends React.Component {
           <label htmlFor="email">
             <span className="uppercase">Email:</span>
             <input
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded text-gray-700 w-full font-sans focus:outline-none focus:border-black"
               id="email"
               name="email"
               onChange={this.handleChange}
@@ -113,7 +113,7 @@ export default class ContactForm extends React.Component {
           <label htmlFor="phone">
             <span className="uppercase">Phone:</span>
             <input
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded text-gray-700 w-full font-sans focus:outline-none focus:border-black"
               id="phone"
               name="phone"
               onChange={this.handleChange}
@@ -127,7 +127,7 @@ export default class ContactForm extends React.Component {
           <label htmlFor="message">
             <span className="uppercase">Message:</span>
             <textarea
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded text-gray-700 w-full font-sans focus:outline-none focus:border-black"
               id="message"
               name="message"
               onChange={this.handleChange}
