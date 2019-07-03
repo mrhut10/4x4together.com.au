@@ -1,5 +1,7 @@
 import React from 'react';
 import { navigate } from 'gatsby-link';
+import PropTypes from 'prop-types';
+import { MdClose } from 'react-icons/md';
 
 function encode(data) {
   return Object.keys(data)
@@ -8,6 +10,10 @@ function encode(data) {
 }
 
 export default class ContactForm extends React.Component {
+  static propTypes = {
+    click: PropTypes.func,
+  };
+
   constructor(props) {
     super(props);
     this.state = { isValidated: false };
@@ -33,16 +39,32 @@ export default class ContactForm extends React.Component {
   };
 
   render() {
+    const { props } = this;
     return (
       <form
         action="/success/"
-        className="w-full"
+        className="bg-white flex flex-col font-display max-w-lg m-4 sm:m-auto px-4 pt-12 relative shadow-2xl w-full"
         data-netlify-honeypot="bot-field"
         data-netlify="true"
         method="post"
         name="contact"
         onSubmit={this.handleSubmit}
       >
+        <button
+          className="absolute p-2 right-0 text-black text-xl top-0 z-50"
+          onClick={props.click}
+          type="button"
+        >
+          <MdClose />
+        </button>
+        <div
+          className="absolute flex inset-x-0 items-center justify-center top-0"
+          style={{ transform: `translateY(-50%)` }}
+        >
+          <div className="bg-black font-display px-12 py-3 rounded text-white sm:text-3xl uppercase">
+            <h2>Lets Talk</h2>
+          </div>
+        </div>
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
         <input name="form-name" type="hidden" value="contact" />
         <div hidden>
@@ -58,12 +80,10 @@ export default class ContactForm extends React.Component {
 
         {/* Name */}
         <div className="mb-6">
-          <label className="flex flex-col" htmlFor="name">
-            <span className="font-bold mb-2 text-xs uppercase tracking-wide">
-              Name:
-            </span>
+          <label htmlFor="name">
+            <span className="uppercase">Name:</span>
             <input
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-blue-600"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
               id="name"
               name="name"
               onChange={this.handleChange}
@@ -75,12 +95,10 @@ export default class ContactForm extends React.Component {
 
         {/* Email address */}
         <div className="mb-6">
-          <label className="flex flex-col" htmlFor="email">
-            <span className="font-bold mb-2 text-xs uppercase tracking-wide">
-              Email address:
-            </span>
+          <label htmlFor="email">
+            <span className="uppercase">Email:</span>
             <input
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-blue-600"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
               id="email"
               name="email"
               onChange={this.handleChange}
@@ -92,12 +110,10 @@ export default class ContactForm extends React.Component {
 
         {/* Phone number */}
         <div className="mb-6">
-          <label className="flex flex-col" htmlFor="phone">
-            <span className="font-bold mb-2 text-xs uppercase tracking-wide">
-              Phone number:
-            </span>
+          <label htmlFor="phone">
+            <span className="uppercase">Phone:</span>
             <input
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-blue-600"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
               id="phone"
               name="phone"
               onChange={this.handleChange}
@@ -108,12 +124,10 @@ export default class ContactForm extends React.Component {
 
         {/* Message */}
         <div className="mb-6">
-          <label className="flex flex-col" htmlFor="message">
-            <span className="font-bold mb-2 text-xs uppercase tracking-wide">
-              Message:
-            </span>
+          <label htmlFor="message">
+            <span className="uppercase">Message:</span>
             <textarea
-              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-blue-600"
+              className="appearance-none bg-white border-2 hover:bg-gray-100 leading-tight px-3 py-2 rounded-none text-gray-700 w-full focus:outline-none focus:border-black"
               id="message"
               name="message"
               onChange={this.handleChange}
@@ -123,23 +137,14 @@ export default class ContactForm extends React.Component {
           </label>
         </div>
 
-        <div className="flex items-center justify-between mb-6">
-          {/* Clear */}
-          <input
-            className="bg-red-100 hover:bg-red-700 cursor-pointer font-semibold leading-none mr-2 px-4 py-2 rounded-full text-red-700 hover:text-white text-xs tracking-wide uppercase"
-            onChange={this.handleChange}
-            type="reset"
-            value="Clear form"
-          />
-
-          {/* Submit */}
-          <button
-            className="bg-blue-700 hover:bg-blue-600 cursor-pointer font-semibold leading-none px-4 py-2 rounded-full text-white text-xs tracking-wide uppercase"
-            type="submit"
-          >
-            Send
-          </button>
-        </div>
+        {/* Submit */}
+        <button
+          className="bg-black hover:bg-gray-900 font-display leading-none ml-auto -mt-8 px-12 py-4 rounded text-white uppercase"
+          style={{ transform: `translateY(50%)` }}
+          type="submit"
+        >
+          Send
+        </button>
       </form>
     );
   }
