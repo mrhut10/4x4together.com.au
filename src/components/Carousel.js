@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 import Carousel from 'nuka-carousel';
-import propTypes from 'prop-types';
 
-const CenterRightControl = ({ currentSlide, goToSlide, slideCount }) => {
+const CenterRightControl = ({ goToSlide, slideCount }) => {
+  // currentSlide,
   const dots = [];
   for (let i = 0; i < slideCount; i += 1) {
     dots.push(
@@ -17,12 +17,12 @@ const CenterRightControl = ({ currentSlide, goToSlide, slideCount }) => {
 };
 
 CenterRightControl.propTypes = {
-  currentSlide: propTypes.number,
-  goToSlide: propTypes.func,
-  slideCount: propTypes.number,
+  // currentSlide: PropTypes.number,
+  goToSlide: PropTypes.func,
+  slideCount: PropTypes.number,
 };
 
-const HeroSectionCarousel = ({ data }) => {
+const HeroSectionCarousel = ({ data, controls }) => {
   return (
     <div className="relative z-10">
       <Carousel
@@ -35,8 +35,15 @@ const HeroSectionCarousel = ({ data }) => {
         style={{ display: `relative`, height: `100vh` }}
         swiping
         wrapAround
-        renderCenterLeftControls={null}
-        renderCenterRightControls={CenterRightControl}
+        renderTopLeftControls={controls.topLeft}
+        renderTopCenterControls={controls.topCenter}
+        renderTopRightControls={controls.topRight}
+        renderCenterLeftControls={controls.centerLeft}
+        renderCenterCenterControls={controls.centerCenter}
+        renderCenterRightControls={controls.centerRight}
+        renderBottomLeftControls={controls.bottomLeft}
+        renderBottomCenterControls={controls.bottomCenter}
+        renderBottomRightControls={controls.bottomRight}
       >
         {data.hero.edges.map(edge => (
           <div
@@ -58,6 +65,17 @@ const HeroSectionCarousel = ({ data }) => {
 
 HeroSectionCarousel.propTypes = {
   data: PropTypes.object,
+  controls: PropTypes.shape({
+    topLeft: PropTypes.func,
+    topCenter: PropTypes.func,
+    topRight: PropTypes.func,
+    centerLeft: PropTypes.func,
+    centerCenter: PropTypes.func,
+    centerRight: PropTypes.func,
+    bottomLeft: PropTypes.func,
+    bottomCenter: PropTypes.func,
+    bottomRight: PropTypes.func,
+  }),
 };
 
 export default HeroSectionCarousel;
