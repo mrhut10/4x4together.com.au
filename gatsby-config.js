@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `4x4 Together`,
     description: `Website meta description for SEO.`,
-    siteUrl: `https://www.phirannodesigns.com.au`, // used for `gatsby-plugin-sitemap` to generate correct URLs
+    siteUrl: `https://www.4x4together.com.au`, // used for `gatsby-plugin-sitemap` to generate correct URLs
     author: ``, // e.g. @phirannodesigns — used for twitter cards in SEO component
     facebook: `https://www.facebook.com/4x4together`,
     instagram: `https://www.instagram.com/4x4together`,
@@ -10,12 +10,12 @@ module.exports = {
     youtube: `https://www.youtube.com/channel/UCsR03-p26KNsjNDFOeszueg`,
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-plugin-canonical-urls`,
-    //   options: {
-    //     siteUrl: `https://www.example.com`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.4x4together.com.au`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,12 +27,18 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-143269585-1`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: `562468627619321`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
